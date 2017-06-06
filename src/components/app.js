@@ -2,10 +2,12 @@ angular.module('video-player')
 
 .component('app', {
   templateUrl: "src/templates/app.html",
+
   controller: function(youTube) {
-    this.search = function(query) {
-      youTube.search(query, this.searchResults);
-    };
+    this.youTube = youTube;
+    // this.search = function(query) {
+    //   youTube.search(query, this.searchResults);
+    // };
     this.searchResults = function(items) {
       this.videos = items;
       this.currentVideo = items[0];
@@ -21,6 +23,6 @@ angular.module('video-player')
 
     };
 
-    youTube.search('hello', this.searchResults.bind(this));
+    this.youTube.search('hello', this.searchResults.bind(this));
   }
 });
