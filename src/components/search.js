@@ -4,7 +4,11 @@ angular.module('video-player')
   templateUrl: "src/templates/search.html",
   controller: function() {
     this.handleClick = function() {
-      this.service.search(this.input, this.result);
+      var that = this;
+      this.service.search(this.input, function(data) {
+        that.result(data);
+      });
+      this.input = '';
     };
   },
   bindings: {
