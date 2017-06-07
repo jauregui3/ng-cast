@@ -15,8 +15,8 @@ angular.module('video-player')
       that.currentVideo = that.videos[0];
     };
 
-    this.currentVideo = window.exampleVideoData[0];
-    this.videos = window.exampleVideoData;
+    this.currentVideo = {};
+    this.videos = [];
 
     this.selectVideo = function(video) {
       that.currentVideo = video;
